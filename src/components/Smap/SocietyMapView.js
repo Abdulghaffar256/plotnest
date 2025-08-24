@@ -1,6 +1,6 @@
 'use client';
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -24,6 +24,14 @@ function ChangeMapView({ coords }) {
 }
 
 export default function SocietyMapView({ coords }) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // run only in browser
+  }, []);
+
+  if (!isClient) return <div className="h-[400px] w-full bg-gray-100">Loading map...</div>;
+
   return (
     <div className="mt-6 h-[400px] w-full">
       <MapContainer center={coords || [31.5204, 74.3587]} zoom={13} scrollWheelZoom className="h-full w-full">
