@@ -26,7 +26,6 @@ export default function AreaGuidance() {
 
   return (
     <main className="max-w-screen-xl mx-auto px-4 py-10">
-
       {/* 🔷 HEADER WITH BACKGROUND IMAGE */}
       <section
         className="relative bg-cover bg-center bg-no-repeat text-white mb-10 rounded-xl overflow-hidden"
@@ -34,7 +33,9 @@ export default function AreaGuidance() {
       >
         <div className="absolute inset-0 bg-green-950 bg-opacity-50" />
         <div className="relative z-10 text-center px-6 py-20">
-          <h1 className="text-4xl md:text-5xl font-bold">Explore Societies in Pakistan</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Explore Societies in Pakistan
+          </h1>
           <p className="text-gray-200 mt-4 text-lg">
             Zameen clone provides a wide choice of societies in Pakistan.
           </p>
@@ -67,67 +68,82 @@ export default function AreaGuidance() {
       {/* 🏘️ SOCIETIES SCROLLER */}
       <SocietyCardGrid societies={filteredSocieties} />
 
-    {/* 📌 BENEFITS */}
-<section className="mt-20 text-center">
-  <h2 className="text-3xl font-semibold">Find Where Life Truly Begins</h2>
-  <p className="text-gray-600 mt-2">
-    Discover vibrant neighborhoods, compare amenities, and make confident decisions with our in-depth area guides.
-  </p>
+      {/* 📌 BENEFITS */}
+      <section className="mt-20 text-center">
+        <h2 className="text-3xl font-semibold">Find Where Life Truly Begins</h2>
+        <p className="text-gray-600 mt-2">
+          Discover vibrant neighborhoods, compare amenities, and make confident
+          decisions with our in-depth area guides.
+        </p>
 
-  <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12">
-    {/* Benefit 1 */}
-    <div className="flex flex-col items-center">
-      <Image
-        src="/images/map-icon.png"
-        alt="Society Maps"
-        width={80}
-        height={80}
-        className="rounded-full mb-4 shadow"
-      />
-      <h4 className="text-lg font-semibold mb-2">Interactive Society Maps</h4>
-      <p className="text-gray-600 max-w-xs">
-        Navigate detailed maps of housing societies, view block layouts, and explore planned roads and parks all in one place.
-      </p>
-    </div>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Benefit 1 */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/map-icon.png"
+              alt="Society Maps"
+              width={80}
+              height={80}
+              className="rounded-full mb-4 shadow"
+            />
+            <h4 className="text-lg font-semibold mb-2">
+              Interactive Society Maps
+            </h4>
+            <p className="text-gray-600 max-w-xs">
+              Navigate detailed maps of housing societies, view block layouts,
+              and explore planned roads and parks all in one place.
+            </p>
+          </div>
 
-    {/* Benefit 2 */}
-    <div className="flex flex-col items-center">
-      <Image
-        src="/images/amenities-icon.png"
-        alt="Amenities"
-        width={80}
-        height={80}
-        className="rounded-full mb-4 shadow"
-      />
-      <h4 className="text-lg font-semibold mb-2">Essential Local Amenities</h4>
-      <p className="text-gray-600 max-w-xs">
-        Instantly locate schools, hospitals, markets, and other nearby services that bring ease and comfort to your lifestyle.
-      </p>
-    </div>
+          {/* Benefit 2 */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/amenities-icon.png"
+              alt="Amenities"
+              width={80}
+              height={80}
+              className="rounded-full mb-4 shadow"
+            />
+            <h4 className="text-lg font-semibold mb-2">
+              Essential Local Amenities
+            </h4>
+            <p className="text-gray-600 max-w-xs">
+              Instantly locate schools, hospitals, markets, and other nearby
+              services that bring ease and comfort to your lifestyle.
+            </p>
+          </div>
 
-    {/* Benefit 3 */}
-    <div className="flex flex-col items-center">
-      <Image
-        src="/images/price-icon.png"
-        alt="Prices"
-        width={80}
-        height={80}
-        className="rounded-full mb-4 shadow"
-      />
-      <h4 className="text-lg font-semibold mb-2">Real-Time Price Insights</h4>
-      <p className="text-gray-600 max-w-xs">
-        Stay informed with up-to-date house and plot prices, whether you&apos;re buying, selling, or just exploring the market.
-      </p>
-    </div>
-  </div>
-</section>
+          {/* Benefit 3 */}
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/price-icon.png"
+              alt="Prices"
+              width={80}
+              height={80}
+              className="rounded-full mb-4 shadow"
+            />
+            <h4 className="text-lg font-semibold mb-2">
+              Real-Time Price Insights
+            </h4>
+            <p className="text-gray-600 max-w-xs">
+              Stay informed with up-to-date house and plot prices, whether
+              you&apos;re buying, selling, or just exploring the market.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 📊 TABS + LISTS */}
       <section className="mt-16">
         <div className="flex gap-4 border-b">
           {["Lahore", "Karachi", "Islamabad"].map((city) => (
             <button
               key={city}
-              className={`pb-2 ${selectedCity === city ? "border-b-2 border-green-600 font-semibold" : ""}`}
+              className={`pb-2 ${
+                selectedCity === city
+                  ? "border-b-2 border-green-600 font-semibold"
+                  : ""
+              }`}
               onClick={() => setSelectedCity(city)}
             >
               {city}
@@ -137,7 +153,9 @@ export default function AreaGuidance() {
 
         <div className="mt-6 flex flex-col md:flex-row justify-between gap-8">
           <div>
-            <h4 className="font-bold mb-2">Most Viewed in {selectedCity}</h4>
+            <h4 className="font-bold mb-2">
+              Most Viewed in {selectedCity}
+            </h4>
             <ul className="text-green-600 list-disc ml-5">
               {filteredSocieties.slice(0, 3).map((s) => (
                 <li key={s.name}>{s.name}</li>
