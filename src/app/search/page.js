@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useSearchParams } from "next/navigation";
 
@@ -21,6 +21,7 @@ export default function SearchPage() {
       <h1 className="text-xl font-bold mb-4">
         Showing results for: &quot;{query}&quot;
       </h1>
+
       {filteredResults.length > 0 ? (
         <ul className="space-y-2">
           {filteredResults.map((item) => (
@@ -28,7 +29,7 @@ export default function SearchPage() {
               key={item.id}
               className="border p-3 rounded hover:shadow-md transition"
             >
-              <strong>{item.title}</strong> –{" "}
+              <strong>{item.title}</strong> &ndash;{" "}
               <span className="text-gray-500">{item.location}</span>
             </li>
           ))}
