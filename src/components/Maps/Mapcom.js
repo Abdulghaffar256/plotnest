@@ -4,10 +4,14 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-delete L.Icon.Default.prototype._getIconUrl;
+// ✅ Safe Leaflet icon configuration
+if (L.Icon.Default.prototype._getIconUrl) {
+  delete L.Icon.Default.prototype._getIconUrl;
+}
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png",
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png",
   iconUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png",
 });
@@ -19,10 +23,13 @@ const cities = {
   Multan: [30.1575, 71.5249],
 };
 
+// ✅ Change map center safely
 function ChangeMapView({ coords }) {
   const map = useMap();
   useEffect(() => {
-    map.setView(coords, 12);
+    if (map) {
+      map.setView(coords, 12);
+    }
   }, [coords, map]);
   return null;
 }
@@ -58,6 +65,7 @@ export default function Mapcom() {
         </button>
       </div>
 
+      {/* Map */}
       <MapContainer
         center={cities[selectedCity]}
         zoom={12}
