@@ -1,8 +1,14 @@
 'use client';
+
 import { useState } from 'react';
 import CitySocietySearch from '@/components/Smap/CitySocietySearch';
-import SocietyMapView from '@/components/Smap/SocietyMapView';
+import dynamic from 'next/dynamic';
 import { societyCoords } from '@/components/Smap/societyCoords';
+
+// Dynamically import SocietyMapView with SSR disabled
+const SocietyMapView = dynamic(() => import('@/components/Smap/SocietyMapView'), {
+  ssr: false,
+});
 
 export default function SocietyMapsPage() {
   const [coords, setCoords] = useState(null);
