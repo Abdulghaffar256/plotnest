@@ -43,7 +43,7 @@ export default function ConstructionTips() {
         Things to Keep In Mind While Constructing Your House
       </h2>
       <p className="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-        Your house is often the hard-earned fruit of your life's work. Be absolutely sure about where, when, and how to build. Here's what you should keep in mind:
+        Your house is often the hard-earned fruit of your life&apos;s work. Be absolutely sure about where, when, and how to build. Here&apos;s what you should keep in mind:
       </p>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
