@@ -1,4 +1,5 @@
 "use client";
+
 import {
   FaFacebookF,
   FaInstagram,
@@ -7,6 +8,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa6";
 import { ChevronUp } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -19,7 +21,7 @@ export default function Footer() {
             <li>About Us</li>
             <li>Contact Us</li>
             <li>Jobs</li>
-            <li>Help & Support</li>
+            <li>Help &amp; Support</li>
             <li>Advertise On Zameen</li>
             <li>Terms Of Use</li>
           </ul>
@@ -58,11 +60,15 @@ export default function Footer() {
 
         {/* Roshan + Social */}
         <div className="flex flex-col items-start">
-          <h4 className="text-white font-semibold mb-4">Roshan Digital Account</h4>
-          <img
+          <h4 className="text-white font-semibold mb-4">
+            Roshan Digital Account
+          </h4>
+          <Image
             src="/assets/roshan-logo.png"
             alt="Roshan Digital Account"
-            className="h-10 mb-6"
+            width={150}
+            height={40}
+            className="h-10 w-auto mb-6"
           />
           <h4 className="text-white font-semibold mb-2">Get Connected</h4>
           <div className="flex space-x-3 text-xl">
@@ -77,7 +83,7 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="max-w-7xl mx-auto mt-10 flex justify-between items-center text-xs text-gray-400">
-        <p>© Copyright 2007 - 2025 Zameen.com. All Rights Reserved</p>
+        <p>&copy; Copyright 2007 - 2025 Zameen.com. All Rights Reserved</p>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center space-x-1 text-gray-300 hover:text-white"
