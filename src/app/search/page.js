@@ -19,7 +19,7 @@ export default function SearchPage() {
   return (
     <div className="p-6 max-w-2xl mx-auto">
       <h1 className="text-xl font-bold mb-4">
-        Showing results for: "{query}"
+        Showing results for: &quot;{query}&quot;
       </h1>
       {filteredResults.length > 0 ? (
         <ul className="space-y-2">
@@ -34,7 +34,9 @@ export default function SearchPage() {
           ))}
         </ul>
       ) : (
-        <p className="text-red-600">No results found for "{query}".</p>
+        <p className="text-red-600">
+          No results found for &quot;{query}&quot;.
+        </p>
       )}
     </div>
   );
