@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SocietyCardGrid from "@/components/society/SocietyCardGrid";
+import Image from "next/image";
 
 const allSocieties = [
   { name: "Lahore Smart City", city: "Lahore", image: "/images/smartcity.jpg" },
@@ -66,7 +67,7 @@ export default function AreaGuidance() {
       {/* 🏘️ SOCIETIES SCROLLER */}
       <SocietyCardGrid societies={filteredSocieties} />
 
-     {/* 📌 BENEFITS */}
+    {/* 📌 BENEFITS */}
 <section className="mt-20 text-center">
   <h2 className="text-3xl font-semibold">Find Where Life Truly Begins</h2>
   <p className="text-gray-600 mt-2">
@@ -76,7 +77,13 @@ export default function AreaGuidance() {
   <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12">
     {/* Benefit 1 */}
     <div className="flex flex-col items-center">
-      <img src="/images/c:\Users\Dell\Pictures\map-icon.png" alt="Society Maps" className="w-20 h-20 rounded-full mb-4 shadow" />
+      <Image
+        src="/images/map-icon.png"
+        alt="Society Maps"
+        width={80}
+        height={80}
+        className="rounded-full mb-4 shadow"
+      />
       <h4 className="text-lg font-semibold mb-2">Interactive Society Maps</h4>
       <p className="text-gray-600 max-w-xs">
         Navigate detailed maps of housing societies, view block layouts, and explore planned roads and parks all in one place.
@@ -85,7 +92,13 @@ export default function AreaGuidance() {
 
     {/* Benefit 2 */}
     <div className="flex flex-col items-center">
-      <img src="/images/amenities-icon.png" alt="Amenities" className="w-20 h-20 rounded-full mb-4 shadow" />
+      <Image
+        src="/images/amenities-icon.png"
+        alt="Amenities"
+        width={80}
+        height={80}
+        className="rounded-full mb-4 shadow"
+      />
       <h4 className="text-lg font-semibold mb-2">Essential Local Amenities</h4>
       <p className="text-gray-600 max-w-xs">
         Instantly locate schools, hospitals, markets, and other nearby services that bring ease and comfort to your lifestyle.
@@ -94,15 +107,20 @@ export default function AreaGuidance() {
 
     {/* Benefit 3 */}
     <div className="flex flex-col items-center">
-      <img src="/images/price-icon.png" alt="Prices" className="w-20 h-20 rounded-full mb-4 shadow" />
+      <Image
+        src="/images/price-icon.png"
+        alt="Prices"
+        width={80}
+        height={80}
+        className="rounded-full mb-4 shadow"
+      />
       <h4 className="text-lg font-semibold mb-2">Real-Time Price Insights</h4>
       <p className="text-gray-600 max-w-xs">
-        Stay informed with up-to-date house and plot prices, whether you're buying, selling, or just exploring the market.
+        Stay informed with up-to-date house and plot prices, whether you&apos;re buying, selling, or just exploring the market.
       </p>
     </div>
   </div>
 </section>
-
       {/* 📊 TABS + LISTS */}
       <section className="mt-16">
         <div className="flex gap-4 border-b">
